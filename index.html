@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800&family=Roboto+Slab:wght@200;300;400;600;800;900&family=Rubik:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./CSS/style.css" />
+  </head>
+  <body>
+    <h2>HW SVG</h2>
+    <div class="wrapper">
+      <button class="accordion">task 1</button>
+      <div class="panel">
+        <h3>Теория к заданию</h3>
+        <p>Мы изучили два свойства, чтобы задать цвет:</p>
+        <ul>
+          <li><b>color</b> для текста;</li>
+          <li><b>background-color</b> для фона.</li>
+          <p>Но, в <b>svg</b> можно изменить цвет еще парой свойств:</p>
+          <li><b>fill</b> для заливки внутри контура;</li>
+          <li><b>stroke</b> для цвета самого контура.</li>
+        </ul>
+        <p>
+          Как правило, <b>stroke</b> используется в иконках довольно редко, а
+          <b>fill</b> практически всегда. Обычно требуется чтобы цвет иконки
+          наследовал цвет родительского элемента (например ссылки). При этом,
+          цвет <b>svg</b> должен меняться вслед за изменением цвета текста
+          родительского элемента (например при <b>:hover</b>). Для наследования
+          цвета текста родителя используют свойство <b>fill</b> со значением
+          <b>currentColor</b> <br />
+          <br />
+          Спрайт - это один файл с множеством разных изображений внутри, как
+          правило, небольших по размеру декоративных элементов (иконок). Спрайты
+          бывают <b>svg</b> и <b>png</b>. Техники для создания <b>svg</b> и
+          <b>png</b>
+          спрайтов очень разные, но смысл один - упаковать множество изображений
+          в один файл с целью ускорить загрузку сайта.
+        </p>
+        <h4>Задание</h4>
+        <p>
+          В <b>html</b> документе, внутри элемента <b>div</b>, размещены три
+          <b>svg</b> иконки из спрайта. Задай цвет изображениям <b>svg</b> по
+          цвету текста родительского элемента <b>div</b>. Цвет иконок должен
+          меняться на orangered и при наведении курсора на <b>div</b>.
+          <br />
+          Для этого
+          <br />
+          селектору класса <b>icon</b> задай css свойство <b>fill</b> со
+          значением <b>currentColor</b>;
+          <br />
+          Убедись, что цвет иконок меняется вместе с цветом текста также и при
+          наведении курсора на элемент <b>div</b>.
+        </p>
+        <p class="warning">
+          <b>исходный код svg спрайта, для задания</b> <br /><br />
+          &lt;svg aria-hidden=&quot;true&quot; style=&quot;position: absolute;
+          width: 0; height: 0&quot; <br />
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;
+          overflow=&quot;hidden&quot;&gt; <br />
+          &lt;defs&gt; <br />
+          &lt;symbol id=&quot;icon-pen&quot; viewBox=&quot;0 0 32 32&quot;&gt;
+          <br />
+          &lt;path d=&quot;M12 20l4-2 14-14-2-2-14 14-2 4zM9.041
+          27.097c-0.989-2.085-2.052-3.149-4.137-4.137l3.097-8.525 4-2.435
+          12-12h-6l-12 12-6 20 20-6 12-12v-6l-12 12-2.435
+          4z&quot;&gt;&lt;/path&gt; <br />
+          &lt;/symbol&gt;<br />
+          &lt;symbol id=&quot;icon-search&quot; viewBox=&quot;0 0 32
+          32&quot;&gt;<br />
+          &lt;path d=&quot;M31.008
+          27.231l-7.58-6.447c-0.784-0.705-1.622-1.029-2.299-0.998 1.789-2.096
+          2.87-4.815 2.87-7.787 0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12
+          12 12c2.972 0 5.691-1.081 7.787-2.87-0.031 0.677 0.293 1.515 0.998
+          2.299l6.447 7.58c1.104 1.226 2.907 1.33 4.007
+          0.23s0.997-2.903-0.23-4.007zM12 20c-4.418 0-8-3.582-8-8s3.582-8 8-8 8
+          3.582 8 8-3.582 8-8 8z&quot;&gt;&lt;/path&gt;<br />
+          &lt;/symbol&gt;<br />
+          &lt;symbol id=&quot;icon-delete&quot; viewBox=&quot;0 0 32
+          32&quot;&gt;<br />
+          &lt;path d=&quot;M6 32h20l2-22h-24zM20 4v-4h-8v4h-10v6l2-2h24l2
+          2v-6h-10zM18 4h-4v-2h4v2z&quot;&gt;&lt;/path&gt;<br />
+          &lt;/symbol&gt;<br />
+          &lt;/defs&gt;<br />
+          &lt;/svg&gt;<br />
+        </p>
+        <p class="html">
+          <b>HTML</b>
+          <br />
+          &lt;div&gt; <br />
+          SVG icons: <br />
+          &lt;svg class=&quot;icon&quot; width=&quot;24&quot;
+          height=&quot;24&quot;&gt;<br />
+          &lt;use href=&quot;/sprite.svg#icon-pen&quot;&gt;<br />
+          &lt;/use&gt;<br />
+          &lt;/svg&gt;<br />
+          &lt;svg class=&quot;icon&quot; width=&quot;24&quot;
+          height=&quot;24&quot;&gt;<br />
+          &lt;use href=&quot;/sprite.svg#icon-search&quot;&gt;<br />
+          &lt;/use&gt;<br />
+          &lt;/svg&gt;<br />
+          &lt;svg class=&quot;icon&quot; width=&quot;24&quot;
+          height=&quot;24&quot;&gt;<br />
+          &lt;use href=&quot;/sprite.svg#icon-delete&quot;&gt;<br />
+          &lt;/use&gt;<br />
+          &lt;/svg&gt;<br />
+          &lt;/div&gt;
+        </p>
+        <p class="css">
+          div { <br />
+          color: green;<br />
+          background-color: #eee;<br />
+          font-size: 24px;<br />
+          } <br />
+          <br />
+
+          .icon {<br />
+          display: inline-block;<br />
+          width: 2rem;<br />
+          height: 2rem;<br />
+
+          } <br /><br />
+
+          div:hover {<br />
+          color: orangered;<br />
+          }
+        </p>
+        <h4>Ответ:</h4>
+        <p></p>
+      </div>
+
+      <button class="accordion">task 2</button>
+      <div class="panel">
+        <h3>Теория к заданию</h3>
+        <b>CSS ПЕРЕМЕННЫЕ</b>
+        <p>
+          <b>CSS</b> переменные - это способ задать значение и затем вызвать это
+          значение в нужном месте. Синтаксис присвоения значения - это два
+          дефиса -- и затем название переменной. Синтаксис вызова значения - это
+          служебное слово var и имя переменной в круглых скобках.
+        </p>
+        <p>Например:</p>
+        <p class="warning">
+          &lt;div class=&quot;square-box&quot;&gt;&lt;/div&gt;
+        </p>
+        <p class="warning">
+          square-box { <br />
+          --diameter: 40px;<br />
+          width: var(--diameter);<br />
+          height: var(--diameter);<br />
+          background-color: orangered;<br />
+          }
+        </p>
+        <div class="figure">
+          <div class="squaere"></div>
+        </div>
+        <b>ЗНАЧЕНИЕ ПО УМОЛЧАНИЮ</b>
+        <p class="warning">
+          &lt;div class=&quot;circle-box&quot;&gt;&lt;/div&gt;
+        </p>
+        <p class="warning">
+          .circle-box { <br />
+          width: var(--diameter, 40px);<br />
+          height: var(--diameter, 40px);<br />
+          border-radius: 50%;<br />
+          background-color: orangered;<br />
+          }
+        </p>
+        <p>
+          При использовании вызова <b>var</b> можно использовать еще одно
+          значение, через запятую, которое будет применяться только в случае,
+          если переменная не будет задана.
+        </p>
+        <div class="figure">
+          <div class="cirle"></div>
+        </div>
+        <b>ОБЛАСТЬ ВИДИМОСТИ</b>
+        <p>
+          Если объявить переменную внутри определенного селектора, то в других
+          селекторах переменная будет недоступна. Если мы хотим сделать
+          переменную доступную для всех селекторов, то такую переменную нужно
+          объявить внутри специального селектора <b>:root</b>
+        </p>
+        <p>Например</p>
+        <p class="warning">
+          &lt;div class=&quot;circle&quot;&gt;&lt;/div&gt; <br />
+          &lt;div class=&quot;square&quot;&gt;&lt;/div&gt;
+        </p>
+        <p class="warning">
+          :root { <br />
+          --heat-color: orangered; <br />
+          --cold-color: navy; <br />
+          } <br /><br />
+          .circle {<br />
+          --diameter: 40px;<br />
+          width: var(--diameter);<br />
+          height: var(--diameter);<br />
+          border-radius: 50%;<br />
+          background-color: var(--heat-color);<br />
+          } <br /><br />
+          .square {<br />
+          width: var(--diameter, 60px);<br />
+          height: var(--diameter, 60px);<br />
+          background-color: var(--cold-color);<br />
+          }
+        </p>
+        <div class="figure">
+          <div class="cirle"></div>
+          <div class="squaere"></div>
+        </div>
+        <p>
+          Для <b>svg</b> спрайтов используется следующий прием. Селектору
+          задается css переменная со значением <b>currentColor</b>, что означает
+          текущий цвет родителя. Затем эта переменная переносится в спрайт и
+          добавляется атрибуту <b>fill</b> вместе со значением по умолчанию.
+          Например :
+        </p>
+        <p class="warning">
+          .icon { <br />
+          --color: currentColor;<br />
+          }
+        </p>
+        <p>Спрайт</p>
+        <p class="warning">
+          &lt;path <br />
+          fill=&quot;var(--color, #000)&quot;<br />
+          d=&quot;M12 20l4-2 14-14-2-2-14 14-2 4zM9.041
+          27.097c-0.989-2.085-2.052-3.149-4.137-4.137l3.097-8.525 4-2.435
+          12-12h-6l-12 12-6 20 20-6 12-12v-6l-12 12-2.435 4z&quot;<br />
+          &gt; <br />&lt;/path&gt;
+        </p>
+        <h4>Задание</h4>
+        <b>исходный код svg спрайта, для задания</b> <br /><br />
+        <p class="warning">
+          &lt;svg <br />
+          aria-hidden=&quot;true&quot; <br />
+          style=&quot;position: absolute; width: 0; height: 0&quot;<br />
+          xmlns=&quot;http://www.w3.org/2000/svg&quot;<br />
+          overflow=&quot;hidden&quot;<br />
+          &gt;<br />
+          &lt;defs&gt;<br />
+          &lt;symbol id=&quot;icon-pen&quot; viewBox=&quot;0 0 32
+          32&quot;&gt;<br />
+          &lt;path <br />
+          fill=&quot;var(--icon-color, #000)&quot; <br />
+          d=&quot;M12 20l4-2 14-14-2-2-14 14-2 4zM9.041
+          27.097c-0.989-2.085-2.052-3.149-4.137-4.137l3.097-8.525 4-2.435
+          12-12h-6l-12 12-6 20 20-6 12-12v-6l-12 12-2.435 4z&quot; <br />
+          &gt;&lt;/path&gt; <br />
+          &lt;/symbol&gt; <br />
+          &lt;symbol id=&quot;icon-search&quot; viewBox=&quot;0 0 32
+          32&quot;&gt; <br />
+          &lt;path <br />
+          fill=&quot;var(--icon-color, #000)&quot; <br />
+          d=&quot;M31.008
+          27.231l-7.58-6.447c-0.784-0.705-1.622-1.029-2.299-0.998 1.789-2.096
+          2.87-4.815 2.87-7.787 0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12
+          12 12c2.972 0 5.691-1.081 7.787-2.87-0.031 0.677 0.293 1.515 0.998
+          2.299l6.447 7.58c1.104 1.226 2.907 1.33 4.007
+          0.23s0.997-2.903-0.23-4.007zM12 20c-4.418 0-8-3.582-8-8s3.582-8 8-8 8
+          3.582 8 8-3.582 8-8 8z&quot;<br />
+          &gt;&lt;/path&gt; <br />
+          &lt;/symbol&gt; <br />
+          &lt;symbol id=&quot;icon-delete&quot; viewBox=&quot;0 0 32
+          32&quot;&gt; <br />
+          &lt;path <br />
+          fill=&quot;var(--icon-color, #000)&quot; <br />
+          d=&quot;M6 32h20l2-22h-24zM20 4v-4h-8v4h-10v6l2-2h24l2 2v-6h-10zM18
+          4h-4v-2h4v2z&quot; <br />
+          &gt; <br />
+          &lt;/path&gt; <br />
+          &lt;/symbol&gt; <br />
+          &lt;/defs&gt; <br />
+          &lt;/svg&gt; <br />
+        </p>
+        <p>
+          В файле <b>sprite-with-fill.svg</b> используется <b>css</b> переменная
+          <b>--icon-color</b>. Сделай так, чтобы svg иконка с классом
+          <b>comment-icon</b> меняла цвет вместе с цветом текста элемента с
+          классом comment. Для этого в селекторе comment-icon объяви переменную
+          <b>--icon-color</b> и задай этой переменной значение, при котором бы
+          наследовался цвет от родителя .
+        </p>
+        <p class="html">
+          <b>HTML</b> <br />
+          &lt;p class=&quot;comment&quot;&gt; <br />
+          &lt;svg class=&quot;comment-icon&quot; width=&quot;24&quot;
+          height=&quot;24&quot;&gt; <br />
+          &lt;use href=&quot;/sprite-with-fill.svg#icon-pen&quot;&gt; <br />
+          &lt;/use&gt; <br />
+          &lt;/svg&gt;<br />
+          Оставьте отзыв <br />
+          &lt;/p&gt;
+        </p>
+        <p class="css">
+          <b>CSS</b> <br />
+          .comment { <br />
+          text-decoration: none; <br />
+          color: green; <br />
+          font-family: sans-serif; <br />
+          font-size: 24px; <br />
+          display: flex; <br />
+          align-items: center; <br />
+          } <br />
+          <br />
+          .comment-icon { <br />
+          margin-right: 0.5rem; <br />
+          } <br />
+          <br />
+          .comment:hover { <br />
+          color: orangered; <br />
+          }
+        </p>
+        <h4>Ответ:</h4>
+        <p></p>
+      </div>
+
+      <button class="accordion">task 3</button>
+      <div class="panel">
+        <h3>Теория к заданию</h3>
+        <p>
+          Иконки, как правило, имеют прозрачный фон. Поэтому, в качестве фона,
+          используется фон ближайшего родительского элемента. Поэтому, нет
+          необходимости изменять фон для <b>sprite</b> - достаточно позаботиться
+          о смене цвета для иконок, а фон менять только у родительского
+          элемента.
+        </p>
+        <h4>Задание</h4>
+        <b>Задайте hover для смены цвета svg иконок и фона.</b>
+        <ul>
+          <p>Для этого:</p>
+          <li>
+            селектору класса <b>item</b> задайте цвет текста с помощью
+            переменной <b>--accent</b>;
+          </li>
+          <li>
+            селектору класса <b>icon</b> задайте переменную
+            <b>--icon-color</b> со значением, необходимым для получения цвета
+            текста родительского элемента;
+          </li>
+          <li>
+            селектору класса <b>item</b> c псевдоклассом <b>:hover</b> задайте
+            цвет текста с помощью переменной <b>--primary;</b>
+          </li>
+        </ul>
+        <p class="html">
+          <b>HTML</b>
+          &lt;ul class=&quot;items&quot;&gt; <br />
+          &lt;li class=&quot;item&quot;&gt; <br />
+          &lt;svg class=&quot;icon&quot; width=&quot;24&quot;
+          height=&quot;24&quot;&gt; <br />
+          &lt;use href=&quot;/sprite-with-fill.svg#icon-delete&quot;&gt; <br />
+          &lt;/use&gt; <br />
+          &lt;/svg&gt; <br />
+          &lt;/li&gt; <br />
+          &lt;li class=&quot;item&quot;&gt; <br />
+          &lt;svg class=&quot;icon&quot; width=&quot;24&quot;
+          height=&quot;24&quot;&gt; <br />
+          &lt;use href=&quot;/sprite-with-fill.svg#icon-pen&quot;&gt; <br />
+          &lt;/use&gt; <br />
+          &lt;/svg&gt; <br />
+          &lt;/li&gt; <br />
+          &lt;/ul&gt; <br />
+        </p>
+        <p class="css">
+          :root { <br />
+          --primary: burlywood; <br />
+          --accent: cadetblue; <br />
+          } <br /><br />
+          .items { <br />
+          list-style: none; <br />
+          display: flex; <br />
+          } <br /><br />
+          .item { <br />
+          margin: 0.25rem;<br />
+          display: block;<br />
+          padding: 0.5rem;<br />
+          border-radius: 50%;<br />
+          background-color: var(--primary);<br />
+          } <br /><br />
+          .icon {<br />
+
+          } <br /><br />
+          .item:hover {<br />
+          background-color: var(--accent);<br />
+          }
+        </p>
+        <h4>Ответ:</h4>
+        <p></p>
+      </div>
+
+      <script src="./js/script.js"></script>
+    </div>
+  </body>
+</html>
